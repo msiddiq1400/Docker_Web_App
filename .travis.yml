@@ -14,7 +14,7 @@ deploy:
   app: "docker-ci-travis"
   env: "docker-ci-travis-env"
   bucket_name: "elasticbeanstalk-us-east-1-789923323709"
-  bucket_path: "docker-ci-travis"
+  bucket_path: "docker-ci-travis/"
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
