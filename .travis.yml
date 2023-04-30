@@ -7,3 +7,19 @@ before_install:
 
 script:
   - docker run -e CI=true msiddiq17328/docker_web_app npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-north-1"
+  app: "docker_react_travis_ci"
+  env: "Dockerreacttravisci-env"
+  bucket_name: "elasticbeanstalk-eu-north-1-789923323709"
+  bucket_path: "docker_react_travis_ci"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
+  
+  # AKIA3P2YZL46QOTQPP35
+  # Yf+R6BtkWGDppyCFR3qj/WaQDrndl/2rRAx2G0lL
